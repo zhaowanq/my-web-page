@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>员工入职信息登记表</title>
-  <link href="./onboarding-bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./onboarding.css">
+  <link th:href="@{/css/onboarding-bootstrap.min.css}" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/onboarding.css}">
 </head>
 <body>
 <div class="container">
   <div class="logo">
-    <img src="./logo.png" alt="马来西亚东海岸铁路项目第十一分部">
+    <img th:src="@{/img/logo.png}" alt="马来西亚东海岸铁路项目第十一分部">
   </div>
   <div class="form-container">
     <h4 class="text-center mb-4">员工入职信息登记表</h4>
@@ -52,6 +52,31 @@
           <option value="其他">其他</option>
         </select>
       </div>
+
+      <div class="mb-3">
+        <label class="form-label">家庭住址</label>
+        <div class="row mb-2">
+          <div class="col-md-4">
+            <select id="province-select" name="province" class="form-select" required>
+              <option value="">请选择省份</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <select id="city-select" name="city" class="form-select" required>
+              <option value="">请选择城市</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <select id="district-select" name="district" class="form-select" required>
+              <option value="">请选择区/县</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <input type="text" name="detailedAddress" class="form-control" placeholder="详细地址（如XX街道XX小区XX号）" required>
+        </div>
+      </div>
+
 
       <div class="mb-3">
         <label class="form-label">政治面貌</label>
